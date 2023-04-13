@@ -27,22 +27,26 @@ createApp({
 
   methods:{
     skip(isNext){
+      console.log('skip');
       if(isNext) this.counter++
       else this.counter--
 
       if(this.counter === this.image.length) this.counter = 0
       if(this.counter < 0) this.counter = this.image.length -1
     },
-    autoplay{
+    
+    autoplay(){
     setInterval(()=>{
-      skip(true)
-    },2000)
+      console.log('entrato');
+      this.skip(true)
+    },3000)
   }
   },
 
   mounted(){
     setTimeout(()=>{
       this.loading = false
+      this.autoplay()
     },2000)
   }
 }).mount("#app")
