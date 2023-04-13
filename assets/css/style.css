@@ -8,7 +8,7 @@
 main{
   height: 100vh;
   position: relative;
-  background-color: rgb(63, 6, 6);
+  background-color: rgba(26, 71, 168, 0.699);
 }
 
 
@@ -17,9 +17,9 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: orange;
-  height: 50%;
-  width: 60%;
+  height: 80%;
+  width: 70%;
+  border-radius: 20px;
 }
 
 .slide{
@@ -36,6 +36,7 @@ img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 
@@ -70,4 +71,20 @@ img{
 .next:hover{
   cursor: pointer;
   background-color: rgba(255, 255, 255, 1);
+}
+
+h1{
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  line-height: 100vh;
+}
+
+.ex-10-icon{
+  animation: turn360degrees 1.0s linear infinite;
+}
+@keyframes turn360degrees{
+  0%{
+    transform: rotate(1turn);
+  }
 }

@@ -5,21 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <link rel="stylesheet" href="assets/css/style.css">
+
   <title>Vue slider</title>
 </head>
 <body>
 
   <main>
     <div id="app">
-    <div class="carousel">
-      <img :src="image" alt="">
-        <div class="previous hidden">
+      <h1 v-if="loading">Loading <i class="ex-10-icon fas fa-circle-notch"></i></h1>
+    <div v-else class="carousel">
+      <img :src="image[counter]" alt="">
+
+        <div @click="skip(false)" class="previous hidden">
           <i class="fa-solid fa-chevron-left"></i>
         </div>
-        <div class="next">
+
+        <div @click="skip(true)" class="next">
           <i class="fa-solid fa-chevron-right"></i>
         </div>
+
     </div>
   </div>
 </main>
