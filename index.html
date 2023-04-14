@@ -16,7 +16,7 @@
     <div id="app">
       <h1 v-if="loading">Loading <i class="ex-10-icon fas fa-circle-notch"></i></h1>
     <div v-else class="carousel">
-      <img :src="image[counter]" alt="">
+      <img :src="image[counter]" alt="" @mouseover="goAutoscroll = false" @mouseleave="goAutoscroll = true">
 
         <div @click="skip(false)" class="previous hidden">
           <i class="fa-solid fa-chevron-left"></i>
@@ -27,7 +27,9 @@
         </div>
 
         <div class="thumbs">
-          <img @click="" v-for="foto in thumbImage" :src="foto" alt="">
+          <img  v-for="(foto, index) in thumbImage" 
+          @click="counter = index" :src="foto" alt="" :class="
+          {'active' : index === counter}">
         </div>
     </div>
   </div>

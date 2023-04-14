@@ -20,7 +20,8 @@ createApp({
         "./assets/img/porsche.jpg"
       ],
        counter: 0,
-       loading: true
+       loading: true,
+       goAutoscroll: true
 
     }
   },
@@ -34,11 +35,11 @@ createApp({
       if(this.counter === this.image.length) this.counter = 0
       if(this.counter < 0) this.counter = this.image.length -1
     },
-    
+
     autoplay(){
     setInterval(()=>{
       console.log('entrato');
-      this.skip(true)
+      if(this.goAutoscroll) this.skip(true)
     },3000)
   }
   },
@@ -47,6 +48,6 @@ createApp({
     setTimeout(()=>{
       this.loading = false
       this.autoplay()
-    },2000)
+    },5000)
   }
 }).mount("#app")

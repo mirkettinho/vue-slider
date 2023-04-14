@@ -32,7 +32,7 @@ main{
   display: block;
 }
 
-img{
+.carousel img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -93,7 +93,7 @@ h1{
   width: 100%;
   height: 60px;
 
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
 }
 
@@ -101,4 +101,8 @@ h1{
   width: calc(100% / 6);
   object-fit: cover;
   
+}
+
+.active{
+  border: 4px solid rgb(243, 2, 2);
 }
